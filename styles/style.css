@@ -1,0 +1,333 @@
+/*
+  This is the stylesheet for index.php
+  Authors: Hunter Ahlquist, Cesar Escalona, Aubrey Davies, Zahrah Alsamach
+  File: style.css
+  Date: 1/18/2021
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100%;
+    background-color: #F5F5F5;
+}
+
+body {
+    background-color: white;
+}
+
+.about-block {
+    box-shadow: inset 0 11px 16px -10px rgba(0, 0, 0, 0.25),
+    inset 0 -11px 16px -10px rgba(0, 0, 0, 0.25);
+}
+
+.tagline-btn {
+    margin: 2em 1em 0 1em;
+    box-shadow: 0 1px 16px 5px rgba(0, 0, 0, 0.25);
+}
+
+#caption {
+    text-align: center;
+}
+
+.cat-card {
+    margin: 1em;
+    padding: 1em;
+    box-shadow: 1px 1px 5px #0e0e0e, -1px -1px 5px #cfcfcf;
+    transform: scale(1);
+    transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+.cat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px #0e0e0e, -4px -4px 20px #cfcfcf;
+    transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.cat-card > a {
+    text-decoration: none;
+    color: black;
+}
+
+#category-body {
+    background-color: #f3fcf0;
+    background-image: url("../images/background_images/logoBack.png");
+    background-position: top;
+    background-repeat: repeat;
+}
+
+#category-header {
+    background-color: #f8f9fa !important;
+    margin: 0.5em 2em 0.5em 2em;
+    padding: 0.5em;
+    border-radius: .25rem;
+}
+
+#category-section {
+    background-image: url("../images/background_images/logoBack.png");
+    background-position: center;
+    background-repeat: repeat;
+}
+
+#partners {
+    margin-top: 20px;
+    padding: 0.5em;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+#drop {
+    align-items: center;
+    justify-content: center;
+}
+
+#gotoCategory {
+    justify-content: right;
+}
+
+.footer {
+    width: 100%;
+    bottom: 100%;
+    height: 60px; /* Set the fixed height of the footer here */
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #F5F5F5;
+    color: gray;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.logo {
+    width: 165px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    margin: auto;
+}
+
+.navbar {
+    background-color: rgb(123, 215, 102);
+    background-image: url("../images/background_images/nav-bg.png");
+    box-shadow: 0 11px 16px -10px rgba(0, 0, 0, 0.25);
+    position: fixed;
+}
+
+.navbar-brand {
+    max-width: 10%;
+    display: contents;
+}
+
+.navbar-toggle {
+    background-color: rgb(123, 215, 102);
+    border: none;
+    float: right;
+}
+
+.bi-three-dots {
+    color: white;
+}
+
+.bi-square {
+    padding-top: 5px;
+}
+
+ul {
+    white-space:nowrap;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+li a {
+    display: inline-block;
+    font-size: 16pt;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: transparent;
+    color: #229E06;
+}
+
+.buttons-background {
+    background-size: 400% 400%;
+
+    padding-top: 10%;
+    padding-bottom: 10%;
+    box-shadow: inset 0 -11px 16px -10px rgba(0, 0, 0, 0.25);
+}
+
+#slideshow {
+    background-image: url("../images/background_images/header-bg.png");
+    background-repeat: no-repeat;
+    background-position: 50% 75%;
+    background-size: auto;
+}
+
+.smart-scroll {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.scrolled-down {
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.scrolled-up {
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.searchbar {
+    background-color: #def8d7;
+    color: #229E06;
+}
+
+#search-page {
+    background-color: #f3fcf0;
+    background-image: url("../images/background_images/logoBack.png");
+    background-position: top;
+    background-repeat: repeat;
+}
+
+.smart-scroll {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.scrolled-down {
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.scrolled-up {
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+}
+
+#tagline {
+    background-color: rgba(106, 158, 60, 0.9);
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin: 20px auto 20px auto;
+    font-size: 2.2rem;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
+
+#displaypart {
+    margin-bottom: 20px;
+}
+
+.company-block {
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+#vicky {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+}
+
+.result-box {
+    margin: 1em 0 1em 0;
+    padding: 0;
+    transform: scale(1);
+    transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+.result-box:hover {
+    transform: scale(1.01);
+    box-shadow: 1px 1px 10px #0e0e0e, -1px -1px 10px #cfcfcf;
+    transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.search-screen {
+    height: 100%;
+    margin-top: 4%;
+}
+
+.result-logo {
+    width: 150px;
+    margin: 1em;
+}
+
+/*new*/
+/* Styles for wrapping the search box */
+
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .search-input {
+    padding-left: 2.375rem;
+}
+
+.has-search {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.searchbar {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.cat-header-line {
+    display: block;
+    flex: 1;
+    margin: 0 30px;
+    height: 3px;
+    background: black;
+}
+
+.search-header-label {
+    margin: 0.25em;
+    text-align: center;
+}
+
+.search-category-header {
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 2em 0;
+}
+
+.cb-nav-root {
+    justify-content: center;
+}
+
+.nav-item {
+    margin: auto;
+    font-weight: bold;
+}
+
