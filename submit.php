@@ -91,8 +91,9 @@ include('include/navbar.php');
         // Write to DB
         $sql = "INSERT INTO " . $activeTable . " (name, image, category, tag_cloud, about, url, street, city, state, country, scale, email, phone, privName, privEmail, privPhone)
             VALUES('$companyName', '$targetFile', '$category', '$keywords', '$about', '$website', '$streetAddress' , '$city', '$state', '$country', '$areaServed', '$pubEmail', '$pubPhone', '$contactName' , '$privEmail', '$privPhone');";
-        $success = mysqli_query($db, $sql);
-        $newResult = mysqli_query($db, "SELECT * FROM " . $activeTable . " ORDER BY id DESC LIMIT 1");
+        $success = mysqli_query($db, $sql) or die(mysqli_error($db));
+        $newResult = mysqli_query($db, "SELECT * FROM " . $activeTable . " ORDER BY id DESC LIMIT 1") or die(mysqli_error($db));
+
     }
 
     echo "
@@ -123,10 +124,9 @@ include('include/navbar.php');
     if (isset($success)){
         foreach ($newResult as $row){
             $appID = $row['id'];
-        }
-        $mailImgPreview = addScheme($_SERVER['SERVER_NAME'] . "/" . $targetFile);
-        $imgTagEmail = "<img width='25%' src='$mailImgPreview'/>";
-        $mailTemplate = "
+            $mailImgPreview = addScheme($_SERVER['SERVER_NAME'] . "/" . $targetFile);
+            $imgTagEmail = "<img width='25%' src='$mailImgPreview'/>";
+            $mailTemplate = "
         <html>
             <body>
                 <h1>Company Application Approval</h1>
@@ -149,11 +149,12 @@ include('include/navbar.php');
             </body>
         </html>
         ";
-        $mailSubject = "
+            $mailSubject = "
         Application Review Request for: $companyName
     ";
 
-        mail($newEntryMailbox, $mailSubject, wordwrap($mailTemplate, 50), $headers);
+            mail($newEntryMailbox, $mailSubject, wordwrap($mailTemplate, 50), $headers);
+        }
     }
 
 

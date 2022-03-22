@@ -30,8 +30,7 @@ include("include/head.html");
 
 
     $sqlSearch = "SELECT * FROM " . $activeTable . " WHERE concat(category, name, about) LIKE '%$searchQ%' AND public = 1 AND rejected = 0 ORDER BY category"; //cool sql stuff
-    $result = mysqli_query($db, $sqlSearch); //search the database using our query. also phpstorm ALWAYS thinks this doesnt exist, ignoring my include
-    if (!is_bool($result)){
+    $result = mysqli_query($db, $sqlSearch) or die(mysqli_error($db)); //search the database using our query. also phpstorm ALWAYS thinks this doesnt exist, ignoring my include
         if (mysqli_num_rows($result) <= 0) { //if no results came up, kindly tell the user!
             $noResultsError = "
         <div class='container'>
@@ -59,7 +58,6 @@ include("include/head.html");
                 $prevCategory = $category;
             }
         }
-    }
     ?>
 </div>
 <?php

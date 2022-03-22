@@ -6,7 +6,9 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+$user = posix_getpwuid(posix_getuid());
+
 // Connect to DB
-require (getenv("HOME").'/backend.php'); //drop backend.php into /home/[YOUR USERNAME HERE]/
+require ( $user['dir'].'/backend.php'); //drop backend.php into /home/[YOUR USERNAME HERE]/
 $db = connect();
-require (getenv("HOME").'/settings.php'); //load settings
+require ($user['dir'].'/settings.php'); //load settings

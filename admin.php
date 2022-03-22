@@ -38,7 +38,7 @@ $result = mysqli_query($db, $sqlSearch);
         <a href="logout.php" class="btn btn-lg text-white bg-primary">Logout</a> <!-- Could use some styling -->
     </div>
     <?php
-    if (mysqli_num_rows($result) <= 0) {
+    if (is_bool($result) || mysqli_num_rows($result) <= 0) {
         if (!isset($_GET['findID'])){
             echo '<h1 class="text-center">All finished!</h1>
             <h3 class=\'text-muted text-center\'>Click refresh, or check back later...</h3>';
@@ -85,7 +85,7 @@ $result = mysqli_query($db, $sqlSearch);
 <?php
 include ('include/footer.html');
 
-if (mysqli_num_rows($result) > 0) {
+if (is_bool($result) || mysqli_num_rows($result) > 0) {
     echo '<script src="script/admin.js"></script>';
 }
 ?>

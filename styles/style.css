@@ -168,7 +168,7 @@ li a:hover:not(.active) {
     background-image: url("../images/background_images/header-bg.png");
     background-repeat: no-repeat;
     background-position: 50% 75%;
-    background-size: auto;
+    background-size: 100%;
 }
 
 .smart-scroll {

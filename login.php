@@ -2,7 +2,7 @@
 // Turn on Error Reporting
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-
+$user = posix_getpwuid(posix_getuid());
 // ---------------------------------------------------------------------------------------
 // think of session as a data bucket
 // start the session
@@ -24,7 +24,7 @@ if(!empty($_POST)) {
     $pw = $_POST['adminPass'];
 
 // if the form is valid
-    require(getenv("HOME").'/login-creds.php');
+    require($user['dir'].'/login-creds.php');
     if ($un == $username && $pw == $password) {
         // Record the login in the session array
         $_SESSION['un'] = $un;

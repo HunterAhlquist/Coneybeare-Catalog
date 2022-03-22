@@ -73,7 +73,7 @@ include('include/navbar.php');
 
         <?php
         $sqlSearch = "SELECT * FROM " . $activeTable . " WHERE category = '$category' AND public = 1 AND rejected = 0 ORDER BY name";
-        $result = mysqli_query($db, $sqlSearch); //search the database using our query
+        $result = mysqli_query($db, $sqlSearch) or die(mysqli_error($db)); //search the database using our query
 
         foreach ($result as $row) {
             echo generateResult($row);
